@@ -2,7 +2,7 @@
 using LeaveManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using LeaveManagementSystem.Data;
+
 using LeaveManagementSystem.Models;
 using System.Data;
 using System.Runtime.Intrinsics.X86;
@@ -11,6 +11,7 @@ using System.Net;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace LeaveManagementSystem.Controllers
 {
@@ -64,7 +65,7 @@ namespace LeaveManagementSystem.Controllers
         {
             if (_context.AdminDetails.Any(s => s.AdminEmail == adminLogin.Email))
             {
-                var checkAdmin = _context.AdminDetails.Where(s => s.AdminEmail == adminLogin.Email).FirstOrDefault();
+                var checkAdmin = _context.AdminDetails.FirstOrDefault(s=>s.AdminEmail==adminLogin.Email);
 
                 if (checkAdmin.AdminPassword == adminLogin.Password)
                 {

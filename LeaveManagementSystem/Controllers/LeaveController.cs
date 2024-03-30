@@ -1,7 +1,7 @@
 ﻿using LeaveManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using LeaveManagementSystem.Data;
+
 using LeaveManagementSystem.Models;
 using System.Data;
 using System.Runtime.Intrinsics.X86;

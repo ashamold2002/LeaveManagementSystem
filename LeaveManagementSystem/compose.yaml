@@ -16,7 +16,7 @@ services:
       dockerfile: Dockerfile
    
     environment:
-       - ConnectionStrings__DefaultConnection=Server=app_db;Port=3307;Database=sampledb;Uid=root;Pwd=root
+       - ConnectionStrings__DefaultConnection=Server=app_db;Port=3306;Database=sampledb;Uid=root;Pwd=root
        - ASPNETCORE_URLS=http://+80
     networks:
        - dev
@@ -29,7 +29,7 @@ services:
        
        - MYSQL_PASSWORD=root
      ports:
-       - "6703:3307"
+       - "6703:3306"
      restart: always
      volumes:
        - app_data:/var/lib/mysql
